@@ -1,27 +1,51 @@
-🚧 Pothole Detection using YOLOv8
-📌 Project Overview
+# 🚧 Pothole Detection using YOLOv8
 
-Pothole Detection using YOLOv8 is an AI-based computer vision project that automatically detects potholes from road images and videos. The system is trained on a custom pothole dataset using the YOLOv8 object detection model. A Flask web application provides an interactive interface where users can upload images or videos and instantly visualize detected potholes.
+An AI-powered computer vision project that detects potholes from road images and videos using the YOLOv8 object detection model.
 
-This project can be used for road maintenance, smart city applications, autonomous vehicles, and accident prevention systems.
+---
 
-🚀 Features
-Detect potholes from images
-Detect potholes from videos
-Real-time object detection using YOLOv8
-Interactive Flask web interface
-Upload images and videos
-Displays bounding boxes around potholes
-Supports multiple file formats
-Attractive and responsive UI
-🛠️ Technologies Used
-Python
-YOLOv8 (Ultralytics)
-Flask
-OpenCV
-HTML5
-CSS3
-📂 Project Structure
+## 📖 Project Overview
+
+This project automatically detects potholes from uploaded images and videos using a custom-trained YOLOv8 model.
+
+The system is trained on a pothole dataset and predicts potholes by drawing bounding boxes around detected road damages.
+
+This project can be useful for:
+
+- 🛣️ Road Maintenance
+- 🏙️ Smart Cities
+- 🚗 Driver Assistance Systems
+- 🤖 Autonomous Vehicles
+- ⚠️ Road Safety Monitoring
+
+---
+
+## ✨ Features
+
+- Detect potholes in images
+- Detect potholes in videos
+- Custom-trained YOLOv8 model
+- High detection accuracy
+- Bounding box visualization
+- Responsive and attractive UI
+- Supports multiple image and video formats
+
+---
+
+## 🛠️ Technologies Used
+
+- Python
+- YOLOv8 (Ultralytics)
+- OpenCV
+- HTML
+- CSS
+- JavaScript
+
+---
+
+## 📂 Project Structure
+
+```text
 Pothole-Detection/
 │
 ├── app.py
@@ -32,6 +56,7 @@ Pothole-Detection/
 │   ├── uploads/
 │   ├── results/
 │   ├── style.css
+│   ├── script.js
 │   └── images/
 │
 ├── templates/
@@ -40,43 +65,48 @@ Pothole-Detection/
 ├── runs/
 │
 └── README.md
-📊 Dataset
+```
 
-The model is trained on a custom pothole dataset.
+---
 
-Dataset contains:
+## 📊 Dataset
 
-Road Images
-Potholes
-Bounding Box Annotations
+The model was trained using a custom pothole dataset.
 
-Annotation Format:
+### Dataset contains
 
-YOLO Format
+- Road Images
+- Potholes
+- Bounding Box Annotations
 
+### Annotation Format
+
+```text
 Class_ID
 X_center
 Y_center
 Width
 Height
-🧠 Model Training
+```
 
-YOLOv8 Nano model was used.
+---
 
-Training Parameters
+## 🧠 Model Training
 
-Model : YOLOv8n
+The project uses the **YOLOv8 Nano** model.
 
-Epochs : 50
+### Training Configuration
 
-Image Size : 640
+| Parameter | Value |
+|-----------|--------|
+| Model | YOLOv8n |
+| Epochs | 50 |
+| Image Size | 640 |
+| Framework | Ultralytics |
 
-Batch Size : Default
+### Training Code
 
-Framework : Ultralytics
-
-Training Command
-
+```python
 from ultralytics import YOLO
 
 model = YOLO("yolo26n.pt")
@@ -86,29 +116,78 @@ model.train(
     epochs=50,
     imgsz=640
 )
-🖼️ Image Detection
+```
+
+---
+
+## 🖼️ Image Detection
+
+```python
 results = model(image)
 
 annotated = results[0].plot()
+```
 
-Detected image is displayed with bounding boxes around potholes.
+The model detects potholes and draws bounding boxes with confidence scores.
 
-🎥 Video Detection
+---
+
+## 🎥 Video Detection
 
 The uploaded video is processed frame by frame.
 
-Each frame is passed to the trained YOLO model.
+Each frame is analyzed using the trained YOLOv8 model.
 
-Detected frames are written into a new output video.
+Detected potholes are marked with bounding boxes, and the processed frames are combined into a new output video.
 
-Finally, the processed video is displayed on the web page.
+---
 
-🌐 Flask Web Application
+## 📸 Sample Workflow
 
-The application provides:
+```text
+Input Image / Video
+          │
+          ▼
+YOLOv8 Detection
+          │
+          ▼
+Bounding Boxes Generated
+          │
+          ▼
+Output Image / Video
+```
 
-Image Upload
-Video Upload
-Detection Result
-Output Preview
-Download Option
+---
+
+## 📈 Future Improvements
+
+- Live webcam detection
+- Drone-based pothole monitoring
+- GPS location tracking
+- Damage severity estimation
+- Cloud deployment
+- Mobile application
+- Automatic maintenance report generation
+
+---
+
+## 🎯 Applications
+
+- Smart City Projects
+- Highway Monitoring
+- Road Infrastructure Inspection
+- Autonomous Driving
+- Municipal Road Maintenance
+- Accident Prevention Systems
+
+---
+
+## ✅ Advantages
+
+- Fast Detection
+- Lightweight Model
+- High Accuracy
+- Easy to Use
+- Supports Images and Videos
+- Real-Time Prediction
+
