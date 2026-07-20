@@ -190,4 +190,7 @@ Output Image / Video
 - Easy to Use
 - Supports Images and Videos
 - Real-Time Prediction
+## ⭐ Support
+
+If you found this project useful, don't forget to give it a ⭐ on GitHub!
 
