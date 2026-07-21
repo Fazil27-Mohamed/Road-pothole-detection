@@ -2,8 +2,10 @@
 
 Flask==3.0.3
 gunicorn==22.0.0
+
 torch
-torchvision==0.17.2+cpu
+torchvision
+
 ultralytics==8.3.0
 opencv-python-headless==4.10.0.84
 numpy==1.26.4
